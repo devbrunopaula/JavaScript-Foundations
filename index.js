@@ -21,7 +21,7 @@ Create another variable called `periods` and give it the value of years*12.
 */
 const monthlyInterestRate  = interestRate / 12;
 
-const periods = years*12
+const periods = years * 12
 
 
 
@@ -55,12 +55,14 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator(p,i,n){
+// 
+function mortgageCalculator1(p,i,n){
+    console.log(p, i, n)
     const monthlyPayment = (p * i) / (1 - (Math.pow((1 + i) , periods * -1)));
     return `Your monthly Payment is $` + monthlyPayment.toFixed(2);
 }
 
-console.log(mortgageCalculator(principal,monthlyInterestRate,periods))
+console.log(mortgageCalculator1(principal,monthlyInterestRate,periods))
 
 
 
@@ -69,10 +71,18 @@ console.log(mortgageCalculator(principal,monthlyInterestRate,periods))
 
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
+******* README HAS a 0 extra
 */
 
+function mortgageCalculator(P,I,N){
+    I /=  12;
+    N *=  12;
+    const monthlyPayment = (P * I) / (1 - (Math.pow((1 + I) , N * -1)));
 
+return `Your monthly Payment is $` + monthlyPayment.toFixed(2);
+}
 
+//  ***** ANSWER = console.log(mortgageCalculator(200000, 0.05, 30))
 
 
 // 🏡 Task 5: Conditionals
