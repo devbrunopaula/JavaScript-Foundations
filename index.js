@@ -1,10 +1,13 @@
 // 🌟🌟🌟 M V P 🌟🌟🌟//
 
 // 🏡 Task 1: Variables
-/* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
+/* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. 
+Create another value called name and give it the value of your own name.
 */
 
-const  Test = Bruno
+const  principal = 200000;
+const  interestRate =  0.05;
+const  years = 30;
 
 
 
@@ -13,23 +16,37 @@ const  Test = Bruno
 
 Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 
+
 Create another variable called `periods` and give it the value of years*12.
 */
+const monthlyInterestRate  = interestRate / 12;
 
+const periods = years*12
 
 
 
 // 🏡 Task 2: Harder Math
-/* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
+/* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. 
+Save the final value into a variable called monthlyRate.
 
-Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
+Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" 
+to calculate the numerator, and another called "denominator" to calculate the denominator 
 
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+// monthlyInterestRate = principal
 
+
+// In order to find your monthly payment amount "M,” you need to plug in the following three numbers from your loan:
+
+// `P` = Principal amount (the total amount borrowed)
+// `I` = Interest rate on the mortgage
+// `N` = Number of periods (monthly mortgage payments)
+
+// M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 
 // 🏡 Task 3: Function
@@ -38,7 +55,12 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator(p,i,n){
+    const monthlyPayment = (p * i) / (1 - (Math.pow((1 + i) , periods * -1)));
+    return `Your monthly Payment is $` + monthlyPayment.toFixed(2);
+}
 
+console.log(mortgageCalculator(principal,monthlyInterestRate,periods))
 
 
 
