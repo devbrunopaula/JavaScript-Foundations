@@ -1,0 +1,24 @@
+{
+  "name": "JavaScript-Foundations",
+  "version": "1.0.0",
+  "description": "The module challenge is the afternoon project or assignment that students work through independently. This expands on the guided project completed earlier with the instructor.",
+  "main": "index.js",
+  "dependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devbrunopaula/JavaScript-Foundations.git"
+  },
+  "keywords": [],
+  "author": "Bruno Paula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devbrunopaula/JavaScript-Foundations/issues"
+  },
+  "homepage": "https://github.com/devbrunopaula/JavaScript-Foundations#readme"
+}
